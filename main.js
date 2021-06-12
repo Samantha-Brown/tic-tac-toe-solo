@@ -14,5 +14,7 @@ window.addEventListener('load', newGame);
 // FUNCTIONS
 function newGame() {
   // needs to clear/reset game board
-  // needs to invoke add win to player scoreboard
+  // needs to retrieve local storage of wins
+
 }
+//  when??? invoke add win to player x scoreboard
