@@ -1,0 +1,26 @@
+/* global */
+
+* {border: 1px solid green;
+  font-family: 'Open Sans', sans-serif; /* Do I need this if using googlefonts */
+  margin: 0px;
+  padding: 0px;
+}
+
+.right-panel,
+.left-panel {
+  font-size: 24;
+  color: darkblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-width: 25%;
+  background-image: linear-gradient(pink, violet, darkblue, black);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: black glitter; 
+    width: 50%;
+
+}
