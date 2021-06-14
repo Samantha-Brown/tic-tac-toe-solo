@@ -1,12 +1,14 @@
 class Game {
   constructor(player1, player2) {
-    this.player1 = new Player; // which one??
-    this.player2 = player2;
-    this.turn = // just turn; or a player/tokin?
+    this.player1 = new Player('one');
+    this.player2 = new Player('two');
+    this.whoseTurn = this.player; // needs to be player1/2??
     this.winningBoards = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],[3,5,7]]; // maybe object instead
   }
   changingPlayers() {
-
+    if (this.whoseTurn === this.player1) {
+      this.activePlayer = this.player2;
+    }
   }
 
   gameWinner() {
