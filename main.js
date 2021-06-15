@@ -34,11 +34,13 @@ player1WinsDisplay.innerText = game.player1.wins || 0;
 player2WinsDisplay.innerText = game.player2.wins || 0;
 }
   // needs to clear/reset game board
-  // needs to retrieve local storage of wins
-}
 
-function placeToken() {
-
+function placeToken(event) {
+  var clickedSpace = event.target.id;
+  anotherGame.playTurn(gameBoard);
+  displayWhoseTurn();
+  checkForDraw();
+  checkForWin();
 }
 
 function displayWhoseTurn() {
@@ -49,5 +51,4 @@ function displayWhoseTurn() {
   }
 }
 
-// Need function to Display who's turn it is, & who won or if draw...
 //  when??? invoke add win to player x scoreboard
