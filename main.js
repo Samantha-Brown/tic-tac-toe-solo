@@ -37,8 +37,8 @@ player2WinsDisplay.innerText = game.player2.wins || 0;
   // needs to retrieve local storage of wins
 }
 
-function placeToken() {
-
+function placeToken(event) {
+  var clickButton = 
 }
 
 function displayWhoseTurn() {
