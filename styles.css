@@ -1,53 +1,46 @@
-/* global */
-
 * {
-  font-family: 'Open Sans', sans-serif; /* Do I need this if using googlefonts */
-  margin: 0px;
-  padding: 0px;
-}
-
-.right-panel,
-.left-panel {
-  color: darkblue;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: linear-gradient(pink, violet, darkblue, black);
-<<<<<<< HEAD
-  height:800px;
-=======
-  /* height:800px; */
+  font-family: 'Open Sans', sans-serif;
+  margin: 5px;
 }
 
 main {
-  width: 100vh;
-  height: 100vh;
   display: flex;
-  flex-direction: row;
->>>>>>> feature/javascript-framework
+  width: 350vw;
+  margin-top: 5vh;
+  margin-bottom:10vh;
 }
 
 body {
-  background-color: white;
   display: flex;
-<<<<<<< HEAD
-=======
-  /* flex-direction: column; */
->>>>>>> feature/javascript-framework
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(pink, violet, darkblue, black);
+  color: black;
+  font-size: 30px;
 }
-
 header {
   color: black;
-
 }
+
+.left-panel
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 15px;
+  height: 15vh;
+  min-height: 5px;
+  margin: 5px;
+}
+
+section {
+  font-size: 45px;
+}
+
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    width: 500px;
-    height:400px;
-    height: 30vh;
-    width: 30vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 40vw;
+  height: 40vw;
+  margin-top: 5vh;
 }
