@@ -1,15 +1,15 @@
 
 // QUERY SELECTORS
 var topOfPageText = document.querySelector(".display-turn");
-var one = document.querySelector("#1");
-var two = document.querySelector("#2");
-var three = document.querySelector("#3");
-var four = document.querySelector("#4");
-var five = document.querySelector("#5");
-var six = document.querySelector("#6");
-var seven = document.querySelector("#7");
-var eight = document.querySelector("#8");
-var nine = document.querySelector("#9");
+var one = document.querySelector("#one");
+var two = document.querySelector("#two");
+var three = document.querySelector("#three");
+var four = document.querySelector("#four");
+var five = document.querySelector("#five");
+var six = document.querySelector("#six");
+var seven = document.querySelector("#seven");
+var eight = document.querySelector("#eight");
+var nine = document.querySelector("#nine");
 var gameBoard = document.querySelector("#game-board");
 var player1WinsDisplay = document.querySelector("#display-1-wins");
 var player2WinsDisplay = document.querySelector("#display-2-wins");
