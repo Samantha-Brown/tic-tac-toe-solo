@@ -10,19 +10,23 @@ var six = document.querySelector("6");
 var seven = document.querySelector("7");
 var eight = document.querySelector("8");
 var nine = document.querySelector("9");
-
+var gameBoard = document.querySelector("#game-board");
 // GLOBAL VARIABLE
 
 var anotherGame = new Game();
 
 // EVENT LISTENERS
 
-window.addEventListener('load', newGame);
-
+window.addEventListener("load", newGame);
+gameBoard.addEventListener("click", placeToken);
 // FUNCTIONS
 function newGame() {
   // needs to clear/reset game board
   // needs to retrieve local storage of wins
+}
+function placeToken() {
 
 }
+
+// Need function to Display who's turn it is, & who won or if draw...
 //  when??? invoke add win to player x scoreboard
