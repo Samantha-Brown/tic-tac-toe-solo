@@ -3,6 +3,7 @@ class Player {
     this.id = id;
     this.token = token;
     this.isDraw = false;
+    this.wonGame = false;
     this.wins = [];
   }
 
