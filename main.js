@@ -30,32 +30,49 @@ function newGame() {
     game.player2.retrieveWinsFromStorage();
   };
 
-player1WinsDisplay.innerText = game.player1.wins || 0;
-player2WinsDisplay.innerText = game.player2.wins || 0;
+player1WinsDisplay.innerText = anotherGame.player1.wins || 0;
+player2WinsDisplay.innerText = anotherGame.player2.wins || 0;
 }
   // needs to clear/reset game board
+var numbers = [1,2,3,4,5,6,7,8,9];
+var humanChoices = [];
+var computerChoices = [];
 
 function placeToken(event) {
+  // console.log(event.target.id);
   event.preventDefault()
+  let num
   if (event.target.id === "one") {
-    let num = 1;
+    num = 1;
   } else if (event.target.id === "two") {
-    let num = 2;
+    num = 2;
   } else if (event.target.id === "three") {
-    let num = 3;
+     num = 3;
   } else if (event.target.id === "four") {
-    let num = 4;
+     num = 4;
   } else if (event.target.id === "five") {
-    let num = 5;
+    num = 5;
   } else if (event.target.id === "six") {
-    let num = 6;
+    num = 6;
   } else if (event.target.id === "seven") {
-    let num = 7;
+    num = 7;
   } else if (event.target.id === "eight") {
-    let num = 8;
+    num = 8;
   } else if (event.target.id === "nine") {
-    let num = 9;
+    num = 9;
   }
+    let index = numbers.indexOf(num);
+    numbers.splice(index, 1);
+    humanChoices.push(num);
+    // console.log(humanChoices);
+    computerPick()
+    anotherGame.checkForWin()
+}
+
+function computerPick() {
+  computerChoices.push(numbers[0]);
+  numbers.splice(0, 1);
+  anotherGame.checkForWin()
 }
   // var clickedSpace = event.target.id;
   // anotherGame.playTurn(gameBoard);
@@ -65,9 +82,9 @@ function placeToken(event) {
 
 function displayWhoseTurn() {
   if (anotherGame.player1.turn === true) {
-    topOfPageText.innerHTML = `It's ${anotherGame.player1.id}'s turn!`
+    topOfPageText.innerHTML = `It's ${anotherGame.player1.token}'s turn!`
   } else {
-    topOfPageText.innerHTML = `It's ${anotherGame.player2.id}'s turn!`
+    topOfPageText.innerHTML = `It's ${anotherGame.player2.token}'s turn!`
   }
 }
 
