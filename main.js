@@ -35,10 +35,13 @@ player2WinsDisplay.innerText = game.player2.wins || 0;
 }
   // needs to clear/reset game board
   // needs to retrieve local storage of wins
-}
 
 function placeToken(event) {
-  var clickButton = 
+  var clickedSpace = event.target.id;
+  anotherGame.playTurn(gameBoard);
+  displayWhoseTurn();
+  checkForDraw();
+  checkForWin();
 }
 
 function displayWhoseTurn() {
