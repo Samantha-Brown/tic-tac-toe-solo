@@ -13,12 +13,27 @@
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(pink, violet, darkblue, black);
+<<<<<<< HEAD
   height:800px;
+=======
+  /* height:800px; */
+}
+
+main {
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+>>>>>>> feature/javascript-framework
 }
 
 body {
   background-color: white;
   display: flex;
+<<<<<<< HEAD
+=======
+  /* flex-direction: column; */
+>>>>>>> feature/javascript-framework
   align-items: center;
   justify-content: center;
 }
