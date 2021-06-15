@@ -36,12 +36,32 @@ player2WinsDisplay.innerText = game.player2.wins || 0;
   // needs to clear/reset game board
 
 function placeToken(event) {
-  var clickedSpace = event.target.id;
-  anotherGame.playTurn(gameBoard);
-  displayWhoseTurn();
-  checkForDraw();
-  checkForWin();
+  event.preventDefault()
+  if (event.target.id === "one") {
+    let num = 1;
+  } else if (event.target.id === "two") {
+    let num = 2;
+  } else if (event.target.id === "three") {
+    let num = 3;
+  } else if (event.target.id === "four") {
+    let num = 4;
+  } else if (event.target.id === "five") {
+    let num = 5;
+  } else if (event.target.id === "six") {
+    let num = 6;
+  } else if (event.target.id === "seven") {
+    let num = 7;
+  } else if (event.target.id === "eight") {
+    let num = 8;
+  } else if (event.target.id === "nine") {
+    let num = 9;
+  }
 }
+  // var clickedSpace = event.target.id;
+  // anotherGame.playTurn(gameBoard);
+  // displayWhoseTurn();
+  // checkForDraw();
+  // checkForWin();
 
 function displayWhoseTurn() {
   if (anotherGame.player1.turn === true) {
