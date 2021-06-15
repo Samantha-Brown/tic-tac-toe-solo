@@ -27,6 +27,14 @@ class Game {
        }
      }
 
+     updateBoard() {
+       for (var i = 0; i < this.winningBoards.length; i++) {
+         if (this.winningBoards[i] === event.target.id) {
+           this.winningBoards.splice(i, 1);
+         }
+       }
+     }
+
   checkForWin() {
     // console.log(this.winningBoards);
      console.log(humanChoices);

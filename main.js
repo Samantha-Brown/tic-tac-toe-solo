@@ -19,10 +19,10 @@ var anotherGame = new Game();
 
 // EVENT LISTENERS
 
-window.addEventListener("load", newGame);
-gameBoard.addEventListener("click", placeToken);
+window.addEventListener("load", showWinsFromStorage);
+gameBoard.addEventListener("click", newGame);
 // FUNCTIONS
-function newGame() {
+function showWinsFromStorage() {
   if (localStorage["display-1-wins"] > 0) {
     game.player1.retrieveWinsFromStorage();
   };
@@ -32,6 +32,13 @@ function newGame() {
 
 player1WinsDisplay.innerText = anotherGame.player1.wins || 0;
 player2WinsDisplay.innerText = anotherGame.player2.wins || 0;
+}
+
+function newGame() {
+  // anotherGame.playToken?? .whoseTurn??
+  anotherGame.checkForWin();
+  anotherGame.checkForDraw();
+
 }
   // needs to clear/reset game board
 var numbers = [1,2,3,4,5,6,7,8,9];
@@ -47,9 +54,9 @@ function placeToken(event) {
   } else if (event.target.id === "two") {
     num = 2;
   } else if (event.target.id === "three") {
-     num = 3;
+    num = 3;
   } else if (event.target.id === "four") {
-     num = 4;
+    num = 4;
   } else if (event.target.id === "five") {
     num = 5;
   } else if (event.target.id === "six") {
