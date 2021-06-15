@@ -14,7 +14,10 @@ class Player {
 // getItem JSON
 // parse
 // if/else statement??? return number of wins
-    = JSON.parse(localStorage.getItem(this.wins));
-}
-
-}
+    if (JSON.parse(localStorage.getItem(`${this.id}))) {
+      this.wins = JSON.parse(localStorage.getItem(`${this.id or this.wins?));
+      } else {
+        this.wins = //nothing????;
+      }
+      return //wins from storage
+    }
