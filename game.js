@@ -3,7 +3,6 @@ class Game {
     this.player1 = new Player("one","⭐"); //????
     this.player2 = new Player("two", "💗");
     this.whoseTurn = this.player1;
-    this.clickedBoxes = 0;
     this.winningBoards = [[1,2,3], [4,5,6], [7, 8, 9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],[3,5,7]];
     this.possibleChoices = [1,2,3,4,5,6,7,8,9];
     this.currentGameWinner
@@ -48,12 +47,14 @@ class Game {
       this.changingPlayers();
       this.player1.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
+      resetBoard();
     } else if (winningJSON.includes(computerJSON)) {
       this.player2.wins++
       this.currentGameWinner = "computer";
       this.changingPlayers();
       this.player2.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
+      resetBoard();
     }
   }
   // resetBoard() {
@@ -61,9 +62,9 @@ class Game {
     //    (player2WinsDisplay.innerText = game.playerTwo.wins);
     //    anotherGame = new Game(); //does this empty the spaces??
 
-    resetBoard(player) {
-      player.clickedBoxes = 0;
-      player.isDraw = false;
-      player.isWinner = false;
+    resetBoard() {
+      this.player1.choices = [];
+      this.player2.choices = [];
+      this.possibleChoices = [1,2,3,4,5,6,7,8,9];
   }
 }
