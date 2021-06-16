@@ -39,36 +39,41 @@ function playGame() {
 
 }
   // needs to clear/reset game board
-var numbers = [1,2,3,4,5,6,7,8,9];
-var humanChoices = [];
-var computerChoices = [];
 
 function placeToken(event) {
-  console.log(event.target.id);
   event.preventDefault()
   let num
   if (event.target.id === "one") {
     num = 1;
+    one.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "two") {
     num = 2;
+    two.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "three") {
     num = 3;
+    three.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "four") {
     num = 4;
+    four.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "five") {
     num = 5;
+    five.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "six") {
     num = 6;
+    six.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "seven") {
     num = 7;
+    seven.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "eight") {
     num = 8;
+    eight.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "nine") {
     num = 9;
+    nine.innerHTML = `${anotherGame.player1.token}`
   }
-    let index = numbers.indexOf(num);
-    numbers.splice(index, 1);
-    humanChoices.push(num);
+    let index = anotherGame.possibleChoices.indexOf(num);
+    anotherGame.possibleChoices.splice(index, 1);
+    anotherGame.player1.choices.push(num);
     anotherGame.checkForWin()
     if (anotherGame.currentGameWinner !== "human") {
       computerPick();
@@ -76,8 +81,36 @@ function placeToken(event) {
 }
 
 function computerPick() {
-  computerChoices.push(numbers[0]);
-  numbers.splice(0, 1);
+  let currentComputerPick = anotherGame.possibleChoices[0];
+  anotherGame.player2.choices.push(anotherGame.possibleChoices[0]);
+  anotherGame.possibleChoices.splice(0, 1);
+  if (currentComputerPick === 1) {
+    one.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 2) {
+    two.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 3) {
+    three.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 4) {
+    four.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 5) {
+    five.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 6) {
+    six.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 7) {
+    seven.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 8) {
+    eight.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 9) {
+    nine.innerHTML = `${anotherGame.player2.token}`
+  }
   anotherGame.checkForWin()
 }
   // var clickedSpace = event.target.id;
