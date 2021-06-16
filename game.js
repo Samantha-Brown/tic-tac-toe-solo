@@ -20,15 +20,6 @@ class Game {
   // gameWinner() {
   //   if ()
   // }
-  checkForDraw() {
-    if (this.clickedBoxes === 9) {
-         this.clickedBoxes = 0;
-         this.whoseTurn.isDraw = true;
-         topOfPageText.innerText = "It's a Draw";
-         setTimeOut(resetBoard, 1000);
-       }
-     }
-
      updateBoard() {
        for (var i = 0; i < this.winningBoards.length; i++) {
          if (this.winningBoards[i] === event.target.id) {
@@ -47,6 +38,7 @@ class Game {
       this.changingPlayers();
       this.player1.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
+      whoWon.innerHTML = "Human Won"
       this.resetBoard();
     } else if (winningJSON.includes(computerJSON)) {
       this.player2.wins++
@@ -54,6 +46,10 @@ class Game {
       this.changingPlayers();
       this.player2.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
+      whoWon.innerHTML = "Computer Won"
+      this.resetBoard();
+    } else if (this.currentGameWinner === undefined && this.possibleChoices.length === 0) {
+      whoWon.innerHTML = "It's a Draw"
       this.resetBoard();
     }
   }
@@ -62,18 +58,31 @@ class Game {
     //    (player2WinsDisplay.innerText = game.playerTwo.wins);
     //    anotherGame = new Game(); //does this empty the spaces??
 
-    resetBoard() {
-      this.player1.choices = [];
-      this.player2.choices = [];
-      this.possibleChoices = [1,2,3,4,5,6,7,8,9];
-      one.innerHTML = ""
-      two.innerHTML = ""
-      three.innerHTML = ""
-      four.innerHTML = ""
-      five.innerHTML = ""
-      six.innerHTML = ""
-      seven.innerHTML = ""
-      eight.innerHTML = ""
-      nine.innerHTML = ""
+  resetBoard() {
+    this.player1.choices = [];
+    this.player2.choices = [];
+    this.possibleChoices = [1,2,3,4,5,6,7,8,9];
+    this.currentGameWinner = ""
+    one.innerHTML = ""
+    two.innerHTML = ""
+    three.innerHTML = ""
+    four.innerHTML = ""
+    five.innerHTML = ""
+    six.innerHTML = ""
+    seven.innerHTML = ""
+    eight.innerHTML = ""
+    nine.innerHTML = ""
+    one.disabled = false;
+    two.disabled = false;
+    three.disabled = false;
+    four.disabled = false;
+    five.disabled = false;
+    six.disabled = false;
+    seven.disabled = false;
+    eight.disabled = false;
+    nine.disabled = false;
+    setTimeout(() => {
+      whoWon.innerHTML = "Play Game!";
+    }, 4000);
   }
 }

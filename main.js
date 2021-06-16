@@ -13,6 +13,7 @@ var nine = document.querySelector("#nine");
 var gameBoard = document.querySelector("#game-board");
 var player1WinsDisplay = document.querySelector("#display-1-wins");
 var player2WinsDisplay = document.querySelector("#display-2-wins");
+var whoWon = document.querySelector("#whoWon");
 // GLOBAL VARIABLE
 
 var anotherGame = new Game();
@@ -46,30 +47,39 @@ function placeToken(event) {
   if (event.target.id === "one") {
     num = 1;
     one.innerHTML = `${anotherGame.player1.token}`
+    one.disabled = true;
   } else if (event.target.id === "two") {
     num = 2;
     two.innerHTML = `${anotherGame.player1.token}`
+    two.disabled = true;
   } else if (event.target.id === "three") {
     num = 3;
     three.innerHTML = `${anotherGame.player1.token}`
+    three.disabled = true;
   } else if (event.target.id === "four") {
     num = 4;
     four.innerHTML = `${anotherGame.player1.token}`
+    four.disabled = true;
   } else if (event.target.id === "five") {
     num = 5;
     five.innerHTML = `${anotherGame.player1.token}`
+    five.disabled = true;
   } else if (event.target.id === "six") {
     num = 6;
     six.innerHTML = `${anotherGame.player1.token}`
+    six.disabled = true;
   } else if (event.target.id === "seven") {
     num = 7;
     seven.innerHTML = `${anotherGame.player1.token}`
+    seven.disabled = true;
   } else if (event.target.id === "eight") {
     num = 8;
     eight.innerHTML = `${anotherGame.player1.token}`
+    eight.disabled = true;
   } else if (event.target.id === "nine") {
     num = 9;
     nine.innerHTML = `${anotherGame.player1.token}`
+    nine.disabled = true;
   }
     let index = anotherGame.possibleChoices.indexOf(num);
     anotherGame.possibleChoices.splice(index, 1);
@@ -86,30 +96,39 @@ function computerPick() {
   anotherGame.possibleChoices.splice(0, 1);
   if (currentComputerPick === 1) {
     one.innerHTML = `${anotherGame.player2.token}`
+    one.disabled = true;
   }
   if (currentComputerPick === 2) {
     two.innerHTML = `${anotherGame.player2.token}`
+    two.disabled = true;
   }
   if (currentComputerPick === 3) {
     three.innerHTML = `${anotherGame.player2.token}`
+    three.disabled = true;
   }
   if (currentComputerPick === 4) {
     four.innerHTML = `${anotherGame.player2.token}`
+    four.disabled = true;
   }
   if (currentComputerPick === 5) {
     five.innerHTML = `${anotherGame.player2.token}`
+    five.disabled = true;
   }
   if (currentComputerPick === 6) {
     six.innerHTML = `${anotherGame.player2.token}`
+    six.disabled = true;
   }
   if (currentComputerPick === 7) {
     seven.innerHTML = `${anotherGame.player2.token}`
+    seven.disabled = true;
   }
   if (currentComputerPick === 8) {
     eight.innerHTML = `${anotherGame.player2.token}`
+    eight.disabled = true;
   }
   if (currentComputerPick === 9) {
     nine.innerHTML = `${anotherGame.player2.token}`
+    nine.disabled = true;
   }
   anotherGame.checkForWin()
 }
