@@ -39,9 +39,6 @@ function playGame() {
 
 }
   // needs to clear/reset game board
-var numbers = [1,2,3,4,5,6,7,8,9];
-var humanChoices = [];
-var computerChoices = [];
 
 function placeToken(event) {
   console.log(event.target.id);
@@ -66,9 +63,9 @@ function placeToken(event) {
   } else if (event.target.id === "nine") {
     num = 9;
   }
-    let index = numbers.indexOf(num);
-    numbers.splice(index, 1);
-    humanChoices.push(num);
+    let index = anotherGame.possibleChoices.indexOf(num);
+    anotherGame.possibleChoices.splice(index, 1);
+    anotherGame.player1.choices.push(num);
     anotherGame.checkForWin()
     if (anotherGame.currentGameWinner !== "human") {
       computerPick();
@@ -76,8 +73,8 @@ function placeToken(event) {
 }
 
 function computerPick() {
-  computerChoices.push(numbers[0]);
-  numbers.splice(0, 1);
+  anotherGame.player2.choices.push(anotherGame.possibleChoices[0]);
+  anotherGame.possibleChoices.splice(0, 1);
   anotherGame.checkForWin()
 }
   // var clickedSpace = event.target.id;
