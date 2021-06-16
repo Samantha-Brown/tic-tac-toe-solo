@@ -41,27 +41,35 @@ function playGame() {
   // needs to clear/reset game board
 
 function placeToken(event) {
-  console.log(event.target.id);
   event.preventDefault()
   let num
   if (event.target.id === "one") {
     num = 1;
+    one.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "two") {
     num = 2;
+    two.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "three") {
     num = 3;
+    three.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "four") {
     num = 4;
+    four.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "five") {
     num = 5;
+    five.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "six") {
     num = 6;
+    six.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "seven") {
     num = 7;
+    seven.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "eight") {
     num = 8;
+    eight.innerHTML = `${anotherGame.player1.token}`
   } else if (event.target.id === "nine") {
     num = 9;
+    nine.innerHTML = `${anotherGame.player1.token}`
   }
     let index = anotherGame.possibleChoices.indexOf(num);
     anotherGame.possibleChoices.splice(index, 1);
