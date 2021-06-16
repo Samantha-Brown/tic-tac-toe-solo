@@ -81,8 +81,36 @@ function placeToken(event) {
 }
 
 function computerPick() {
+  let currentComputerPick = anotherGame.possibleChoices[0];
   anotherGame.player2.choices.push(anotherGame.possibleChoices[0]);
   anotherGame.possibleChoices.splice(0, 1);
+  if (currentComputerPick === 1) {
+    one.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 2) {
+    two.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 3) {
+    three.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 4) {
+    four.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 5) {
+    five.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 6) {
+    six.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 7) {
+    seven.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 8) {
+    eight.innerHTML = `${anotherGame.player2.token}`
+  }
+  if (currentComputerPick === 9) {
+    nine.innerHTML = `${anotherGame.player2.token}`
+  }
   anotherGame.checkForWin()
 }
   // var clickedSpace = event.target.id;

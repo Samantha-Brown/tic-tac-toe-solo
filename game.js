@@ -47,14 +47,14 @@ class Game {
       this.changingPlayers();
       this.player1.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
-      resetBoard();
+      this.resetBoard();
     } else if (winningJSON.includes(computerJSON)) {
       this.player2.wins++
       this.currentGameWinner = "computer";
       this.changingPlayers();
       this.player2.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
-      resetBoard();
+      this.resetBoard();
     }
   }
   // resetBoard() {
@@ -66,5 +66,14 @@ class Game {
       this.player1.choices = [];
       this.player2.choices = [];
       this.possibleChoices = [1,2,3,4,5,6,7,8,9];
+      one.innerHTML = ""
+      two.innerHTML = ""
+      three.innerHTML = ""
+      four.innerHTML = ""
+      five.innerHTML = ""
+      six.innerHTML = ""
+      seven.innerHTML = ""
+      eight.innerHTML = ""
+      nine.innerHTML = ""
   }
 }
