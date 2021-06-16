@@ -25,15 +25,11 @@ gameBoard.addEventListener("click", placeToken);
 // FUNCTIONS
 
 function showWinsFromStorage() {
-  if (localStorage["display-1-wins"] > 0) {
     anotherGame.player1.retrieveWinsFromStorage();
-  };
-  if (localStorage["display-2-wins"] > 0) {
     anotherGame.player2.retrieveWinsFromStorage();
-  };
 
-    player1WinsDisplay.innerText = anotherGame.player1.wins || 0;
-    player2WinsDisplay.innerText = anotherGame.player2.wins || 0;
+    player1WinsDisplay.innerText = anotherGame.player1.wins;
+    player2WinsDisplay.innerText = anotherGame.player2.wins;
  } // this function causes my side panels to disappear on the site
 
 function playGame() {
@@ -73,9 +69,10 @@ function placeToken(event) {
     let index = numbers.indexOf(num);
     numbers.splice(index, 1);
     humanChoices.push(num);
-    // console.log(humanChoices);
-    computerPick()
     anotherGame.checkForWin()
+    if (anotherGame.currentGameWinner !== "human") {
+      computerPick();
+    }
 }
 
 function computerPick() {
