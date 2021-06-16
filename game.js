@@ -8,9 +8,9 @@ class Game {
   }
   changingPlayers() {
     if (this.whoseTurn === this.player1) {
-      this.whoseTurn = this.player2;
+      this.whoseTurn = this.player2.id;
     } else {
-      this.whoseTurn = this.player1;
+      this.whoseTurn = this.player1.id;
     }
   }
   // playTurn() {
@@ -37,18 +37,20 @@ class Game {
      }
 
    checkForWin() {
+     console.log(this.player1);
     var winningJSON = JSON.stringify(this.winningBoards)
     var humanJSON = JSON.stringify(humanChoices)
-
-  function determineTrue() {
     if (winningJSON.includes(humanJSON)) {
+      this.player1.wins++
+      this.changingPlayers();
+      this.player1.saveWinsToStorage(this.whoseTurn);
       return `human wins`
     } else {
       return `computer wins`
-      }
     }
   }
 }
+
     // console.log(this.winningBoards);
      // console.log(humanChoices);
     // if (this.winningBoards.includes(humanChoices)) {
@@ -76,12 +78,12 @@ class Game {
   // resetBoard() {
     // if (player1WinsDisplay.innerText = game.playerOne.wins) ||
     //    (player2WinsDisplay.innerText = game.playerTwo.wins);
-    //    newGame = new Game(); //does this empty the spaces??
+    //    anotherGame = new Game(); //does this empty the spaces??
 
   //   resetBoard(player) {
   //     player.clickedBoxes = 0;
-  //     player.isDraw = false; // do I need this??
-  //     player.isWinner = false; // do I need this??
+  //     player.isDraw = false;
+  //     player.isWinner = false;
   // }
 
   // }
