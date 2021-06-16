@@ -5,6 +5,7 @@ class Game {
     this.whoseTurn = this.player1;
     this.clickedBoxes = 0;
     this.winningBoards = [[1,2,3], [4,5,6], [7, 8, 9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],[3,5,7]];
+    this.currentGameWinner
   }
   changingPlayers() {
     if (this.whoseTurn === this.player1) {
@@ -37,20 +38,24 @@ class Game {
      }
 
    checkForWin() {
-     console.log(this.player1);
     var winningJSON = JSON.stringify(this.winningBoards)
     var humanJSON = JSON.stringify(humanChoices)
+    var computerJSON = JSON.stringify(computerChoices)
     if (winningJSON.includes(humanJSON)) {
       this.player1.wins++
+      this.currentGameWinner = "human";
       this.changingPlayers();
       this.player1.saveWinsToStorage(this.whoseTurn);
-      return `human wins`
-    } else {
-      return `computer wins`
+      showWinsFromStorage();
+    } else if (winningJSON.includes(computerJSON)) {
+      this.player2.wins++
+      this.currentGameWinner = "computer";
+      this.changingPlayers();
+      this.player2.saveWinsToStorage(this.whoseTurn);
+      showWinsFromStorage();
     }
   }
 }
-
     // console.log(this.winningBoards);
      // console.log(humanChoices);
     // if (this.winningBoards.includes(humanChoices)) {
