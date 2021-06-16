@@ -1,6 +1,6 @@
 
 // QUERY SELECTORS
-var topOfPageText = document.querySelector(".display-turn");
+var topOfPageText = document.querySelector("#winner-display");
 var one = document.querySelector("#one");
 var two = document.querySelector("#two");
 var three = document.querySelector("#three");
@@ -19,25 +19,27 @@ var anotherGame = new Game();
 
 // EVENT LISTENERS
 
-window.addEventListener("load", showWinsFromStorage);
-gameBoard.addEventListener("click", newGame);
+// window.addEventListener("load", showWinsFromStorage);
+gameBoard.addEventListener("click", placeToken);
+
 // FUNCTIONS
-function showWinsFromStorage() {
-  if (localStorage["display-1-wins"] > 0) {
-    game.player1.retrieveWinsFromStorage();
-  };
-  if (localStorage["display-2-wins"] > 0) {
-    game.player2.retrieveWinsFromStorage();
-  };
 
-player1WinsDisplay.innerText = anotherGame.player1.wins || 0;
-player2WinsDisplay.innerText = anotherGame.player2.wins || 0;
-}
+// function showWinsFromStorage() {
+//   if (localStorage["display-1-wins"] > 0) {
+//     anotherGame.player1.retrieveWinsFromStorage();
+//   };
+//   if (localStorage["display-2-wins"] > 0) {
+//     anotherGame.player2.retrieveWinsFromStorage();
+//   };
+//
+//     player1WinsDisplay.innerText = anotherGame.player1.wins || 0;
+//     player2WinsDisplay.innerText = anotherGame.player2.wins || 0;
+// } // this function causes my side panels to disappear on the site
 
-function newGame() {
-  // anotherGame.playToken?? .whoseTurn??
-  anotherGame.checkForWin();
-  anotherGame.checkForDraw();
+function playGame() {
+  // // anotherGame.playToken?? .whoseTurn??
+  // anotherGame.checkForWin();
+  // anotherGame.checkForDraw();
 
 }
   // needs to clear/reset game board
@@ -46,7 +48,7 @@ var humanChoices = [];
 var computerChoices = [];
 
 function placeToken(event) {
-  // console.log(event.target.id);
+  console.log(event.target.id);
   event.preventDefault()
   let num
   if (event.target.id === "one") {

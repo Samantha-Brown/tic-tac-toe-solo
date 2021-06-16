@@ -24,6 +24,7 @@ class Game {
          this.clickedBoxes = 0;
          this.whoseTurn.isDraw = true;
          topOfPageText.innerText = "It's a Draw";
+         setTimeOut(resetBoard, 1000);
        }
      }
 
@@ -35,20 +36,34 @@ class Game {
        }
      }
 
-  checkForWin() {
+   checkForWin() {
+    var winningJSON = JSON.stringify(this.winningBoards)
+    var humanJSON = JSON.stringify(humanChoices)
+
+  function determineTrue() {
+    if (winningJSON.includes(humanJSON)) {
+      return `human wins`
+    } else {
+      return `computer wins`
+      }
+    }
+  }
+}
     // console.log(this.winningBoards);
-     console.log(humanChoices);
+     // console.log(humanChoices);
     // if (this.winningBoards.includes(humanChoices)) {
     //   console.log('human wins');
     // }
     // if (this.winningBoards.includes(computerChoices)) {
     //   console.log('computer wins');
     // }
-      for (var i = 0; i < this.winningBoards.length; i++) { // don't need this?
-        if (this.winningBoards[i]) {
-          console.log(humanChoices);
-        }
-      }
+
+      // for (var i = 0; i < this.winningBoards.length; i++) { // don't need this?
+      //   if (this.winningBoards[i]) {
+      //     console.log(humanChoices);
+      //   }
+      // }
+
     // var winningSetup = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],[3,5,7]];
     // for (var i = 0; i < this.winningBoards.length; i++) {
     //   if (this.winningBoards[winningSetup[i][0]] === this.whoseTurn &&
@@ -57,8 +72,16 @@ class Game {
     //     return this.whoseTurn.wonGame = true; //does this make sense???
     //   }
    // }
-  }
+
   // resetBoard() {
-  //   if
+    // if (player1WinsDisplay.innerText = game.playerOne.wins) ||
+    //    (player2WinsDisplay.innerText = game.playerTwo.wins);
+    //    newGame = new Game(); //does this empty the spaces??
+
+  //   resetBoard(player) {
+  //     player.clickedBoxes = 0;
+  //     player.isDraw = false; // do I need this??
+  //     player.isWinner = false; // do I need this??
   // }
-}
+
+  // }

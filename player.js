@@ -4,7 +4,7 @@ class Player {
     this.token = token;
     this.isDraw = false;
     this.wonGame = false;
-    this.wins = [];
+    this.wins = 0;
   }
 
   saveWinsToStorage() {
