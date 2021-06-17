@@ -5,9 +5,11 @@
 
 main {
   display: flex;
+  justify-content: center;
   width: 350vw;
   margin-top: 5vh;
   margin-bottom:30vh;
+  padding: 10px;
 }
 
 body {
@@ -35,7 +37,7 @@ header {
 }
 
 section {
-  font-size: 45px;
+  font-size: 35px;
 }
 
 .game-board {

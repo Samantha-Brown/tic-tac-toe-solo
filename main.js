@@ -1,6 +1,6 @@
 
 // QUERY SELECTORS
-var topOfPageText = document.querySelector("#winner-display");
+
 var one = document.querySelector("#one");
 var two = document.querySelector("#two");
 var three = document.querySelector("#three");
@@ -14,6 +14,7 @@ var gameBoard = document.querySelector("#game-board");
 var player1WinsDisplay = document.querySelector("#display-1-wins");
 var player2WinsDisplay = document.querySelector("#display-2-wins");
 var whoWon = document.querySelector("#whoWon");
+
 // GLOBAL VARIABLE
 
 var anotherGame = new Game();
@@ -29,8 +30,8 @@ function showWinsFromStorage() {
     anotherGame.player1.retrieveWinsFromStorage();
     anotherGame.player2.retrieveWinsFromStorage();
 
-    player1WinsDisplay.innerText = anotherGame.player1.wins;
-    player2WinsDisplay.innerText = anotherGame.player2.wins;
+    player1WinsDisplay.innerText = `⭐  wins ${anotherGame.player1.wins}`;
+    player2WinsDisplay.innerText = `💗 wins ${anotherGame.player2.wins}`;
  } // this function causes my side panels to disappear on the site
 
 function playGame() {
@@ -85,8 +86,8 @@ function placeToken(event) {
     anotherGame.possibleChoices.splice(index, 1);
     anotherGame.player1.choices.push(num);
     anotherGame.checkForWin()
-    if (anotherGame.currentGameWinner !== "human") {
-      computerPick();
+    if (anotherGame.currentGameWinner !== "⭐") {
+      //computerPick();
     }
 }
 
@@ -139,10 +140,10 @@ function computerPick() {
   // checkForWin();
 
 function displayWhoseTurn() {
-  if (anotherGame.player1.turn === true) {
-    topOfPageText.innerHTML = `It's ${anotherGame.player1.token}'s turn!`
+  if (anotherGame.whoseTurn === anotherGame.player1) {
+    whoWon.innerHTML = `${anotherGame.player1.token} turn!`
   } else {
-    topOfPageText.innerHTML = `It's ${anotherGame.player2.token}'s turn!`
+    whoWon.innerHTML = `${anotherGame.player2.token} turn!`
   }
 }
 

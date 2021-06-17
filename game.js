@@ -1,6 +1,6 @@
 class Game {
-  constructor(player1, player2) { // Do I need these parameters???
-    this.player1 = new Player("one","⭐"); //????
+  constructor() {
+    this.player1 = new Player("one","⭐");
     this.player2 = new Player("two", "💗");
     this.whoseTurn = this.player1;
     this.winningBoards = [[1,2,3], [4,5,6], [7, 8, 9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],[3,5,7]];
@@ -34,19 +34,19 @@ class Game {
     var computerJSON = JSON.stringify(anotherGame.player2.choices)
     if (winningJSON.includes(humanJSON)) {
       this.player1.wins++
-      this.currentGameWinner = "human";
+      this.currentGameWinner = "⭐";
       this.changingPlayers();
       this.player1.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
-      whoWon.innerHTML = "Human Won"
+      whoWon.innerHTML = "⭐ Won"
       this.resetBoard();
     } else if (winningJSON.includes(computerJSON)) {
       this.player2.wins++
-      this.currentGameWinner = "computer";
+      this.currentGameWinner = "💗";
       this.changingPlayers();
       this.player2.saveWinsToStorage(this.whoseTurn);
       showWinsFromStorage();
-      whoWon.innerHTML = "Computer Won"
+      whoWon.innerHTML = "💗 Won"
       this.resetBoard();
     } else if (this.currentGameWinner === undefined && this.possibleChoices.length === 0) {
       whoWon.innerHTML = "It's a Draw"
