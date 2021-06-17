@@ -21,11 +21,11 @@ class Game {
       if (currentWinningCombo.every(currentNumber =>
         this.whoseTurn.choices.includes(currentNumber))) {
           this.whoseTurn.wins++
-          this.currentGameWinner = "⭐";
-          this.changingPlayers();
+          this.currentGameWinner = this.whoseTurn;
           this.whoseTurn.saveWinsToStorage();
           showWinsFromStorage();
           whoWon.innerHTML = `${this.whoseTurn.token} Won!`
+          this.changingPlayers();
           this.resetBoard();
       }
      if (this.currentGameWinner === undefined && this.possibleChoices.length === 0) {
@@ -39,7 +39,7 @@ class Game {
     this.player1.choices = [];
     this.player2.choices = [];
     this.possibleChoices = [1,2,3,4,5,6,7,8,9];
-    this.currentGameWinner = ""
+    this.currentGameWinner = "";
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].innerHTML = "";
       buttons[i].disabled = false;
