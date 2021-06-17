@@ -78,15 +78,13 @@ function placeToken(event) {
     var index = anotherGame.possibleChoices.indexOf(num);
     anotherGame.possibleChoices.splice(index, 1);
     anotherGame.whoseTurn.choices.push(num);
-    console.log(anotherGame.whoseTurn.id);
-    console.log(anotherGame.whoseTurn.choices);
     displayWhoseTurn();
     anotherGame.checkForWin()
     anotherGame.changingPlayers();
 }
 
 function displayWhoseTurn() {
-  if (anotherGame.whoseTurn === anotherGame.player1) {
+  if (anotherGame.whoseTurn === anotherGame.player2) {
     whoWon.innerText = `${anotherGame.player1.token} turn!`
   } else {
     whoWon.innerText = `${anotherGame.player2.token} turn!`

@@ -8,13 +8,11 @@ class Player {
 
   saveWinsToStorage(whoseTurn) {
   localStorage.setItem(this.id, JSON.stringify(this.wins));
-  //localStorage.setItem("whoseTurn", JSON.stringify(whoseTurn));
   }
 
   retrieveWinsFromStorage() {
     if (JSON.parse(localStorage.getItem(this.id))) {
       this.wins = JSON.parse(localStorage.getItem(this.id));
-    //  anotherGame.whoseTurn = JSON.parse(localStorage.getItem("whoseTurn"));
       } else {
         this.wins = 0;
       }
