@@ -5,7 +5,7 @@ class Game {
     this.whoseTurn = this.player1;
     this.winningBoards = [[1,2,3], [4,5,6], [7, 8, 9], [1,4,7], [2,5,8], [3,6,9], [1,5,9],[3,5,7]];
     this.possibleChoices = [1,2,3,4,5,6,7,8,9];
-    this.currentGameWinner
+    //this.currentGameWinner
   }
   changingPlayers() {
     if (this.whoseTurn === this.player1) {
@@ -27,28 +27,41 @@ class Game {
      }
 
    checkForWin() {
-    var winningJSON = JSON.stringify(this.winningBoards)
-    var player1JSON = JSON.stringify(anotherGame.player1.choices)
-    var player2JSON = JSON.stringify(anotherGame.player2.choices)
-    if (winningJSON.includes(player1JSON)) {
-      this.player1.wins++
-      this.currentGameWinner = "⭐";
-      this.changingPlayers();
-      this.player1.saveWinsToStorage(this.whoseTurn);
-      showWinsFromStorage();
-      whoWon.innerHTML = "⭐ Won"
-      this.resetBoard();
-    } else if (winningJSON.includes(player2JSON)) {
-      this.player2.wins++
-      this.currentGameWinner = "💗";
-      this.changingPlayers();
-      this.player2.saveWinsToStorage(this.whoseTurn);
-      showWinsFromStorage();
-      whoWon.innerHTML = "💗 Won"
-      this.resetBoard();
-    } else if (this.currentGameWinner === undefined && this.possibleChoices.length === 0) {
-      whoWon.innerHTML = "It's a Draw"
-      this.resetBoard();
+    // var winningJSON = JSON.stringify(this.winningBoards)
+    // var player1JSON = JSON.stringify(anotherGame.player1.choices)
+    // var player2JSON = JSON.stringify(anotherGame.player2.choices)
+    // if (winningJSON.includes(player1JSON)) {
+    //   this.player1.wins++
+    //   this.currentGameWinner = "⭐";
+    //   this.changingPlayers();
+    //   this.player1.saveWinsToStorage(this.whoseTurn);
+    //   showWinsFromStorage();
+    //   whoWon.innerHTML = "⭐ Won"
+    //   this.resetBoard();
+    // } else if (winningJSON.includes(player2JSON)) {
+    //   this.player2.wins++
+    //   this.currentGameWinner = "💗";
+    //   this.changingPlayers();
+    //   this.player2.saveWinsToStorage(this.whoseTurn);
+    //   showWinsFromStorage();
+    //   whoWon.innerHTML = "💗 Won"
+    //   this.resetBoard();
+    // } else if (this.currentGameWinner === undefined && this.possibleChoices.length === 0) {
+    //   whoWon.innerHTML = "It's a Draw"
+    //   this.resetBoard();
+    // }
+    for (var i =0; i < this.winningBoards.length; i++) {
+      var currentWinningCombo = this.winningBoards[i];
+      if (currentWinningCombo.every(currentNumber =>
+        this.whoseTurn.choices.includes(currentNumber))) {
+          this.whoseTurn.wins++
+        //  this.currentGameWinner = "⭐";
+          this.changingPlayers();
+          this.whoseTurn.saveWinsToStorage();
+          showWinsFromStorage();
+          whoWon.innerHTML = `${this.whoseTurn.token} Won!`
+          this.resetBoard();
+      }
     }
   }
 

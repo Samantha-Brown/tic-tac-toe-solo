@@ -89,8 +89,6 @@ function placeToken(event) {
     displayWhoseTurn();
     anotherGame.checkForWin()
     anotherGame.changingPlayers();
-
-
 }
 
 function displayWhoseTurn() {
