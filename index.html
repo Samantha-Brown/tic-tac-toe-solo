@@ -6,31 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe Solo Project</title>
   </head>
-    <main>
-      <section class="left-panel">
-          <h2 class="display-1-wins" id="display-1-wins">⭐ wins</h2>
-      </section>
-      <body>
+  <body>
+      <main>
         <header>
-          <h1 class="display-turn" id="winner-display">Play Game!</h1>
-            <section class="game-board" id="game-board">
-              <button id="one"></button>
-              <button id="two"></button>
-              <button id="three"></button>
-              <button id="four"></button>
-              <button id="five"></button>
-              <button id="six"></button>
-              <button id="seven"></button>
-              <button id="eight"></button>
-              <button id="nine"></button>
+          <h1 class="display-turn" id="whoWon">Play Game!</h1>
+        </header>
+        <section class="main-box">
+        <section class="left-panel">
+            <h2 class="display-1-wins" id="display-1-wins">⭐ wins</h2>
+          </section>
+          <section class="game">
+              <section class="game-board" id="game-board">
+                <button class="button" id="one"></button>
+                <button class="button" id="two"></button>
+                <button class="button" id="three"></button>
+                <button class="button" id="four"></button>
+                <button class="button" id="five"></button>
+                <button class="button" id="six"></button>
+                <button class="button" id="seven"></button>
+                <button class="button" id="eight"></button>
+                <button class="button" id="nine"></button>
+              </section>
+            <section class="right-panel">
+              <h2 class="display-2-wins" id="display-2-wins">💗 wins</h2>
             </section>
-          </header>
-      <section class="right-panel">
-          <h2 class="display-2-wins" id="display-2-wins">💗 wins</h2>
-      </section>
-        <script type="text/javascript" src="game.js"></script>
-        <script type="text/javascript" src="player.js"></script>
-        <script type="text/javascript" src="main.js"></script>
-      </body>
-    </main>
+          </section>
+        </main>
+            <script type="text/javascript" src="game.js"></script>
+            <script type="text/javascript" src="player.js"></script>
+            <script type="text/javascript" src="main.js"></script>
+    </body>
 </html>
