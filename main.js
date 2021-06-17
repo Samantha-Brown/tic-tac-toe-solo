@@ -31,19 +31,12 @@ function showWinsFromStorage() {
     anotherGame.player2.retrieveWinsFromStorage();
     player1WinsDisplay.innerText = `⭐  wins ${anotherGame.player1.wins}`;
     player2WinsDisplay.innerText = `💗 wins ${anotherGame.player2.wins}`;
- } // this function causes my side panels to disappear on the site
+ }
 
-function playGame() {
-  // // anotherGame.playToken?? .whoseTurn??
-  // anotherGame.checkForWin();
-  // anotherGame.checkForDraw();
-
-}
-  // needs to clear/reset game board
 
 function placeToken(event) {
   event.preventDefault()
-  let num
+  var num
   if (event.target.id === "one") {
     num = 1;
     one.innerHTML = `${anotherGame.whoseTurn.token}`
