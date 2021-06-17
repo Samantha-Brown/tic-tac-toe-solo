@@ -9,18 +9,16 @@ class Game {
   }
   changingPlayers() {
     if (this.whoseTurn === this.player1) {
-      this.whoseTurn = this.player2.id;
+      this.whoseTurn = this.player2;
     } else {
-      this.whoseTurn = this.player1.id;
+      this.whoseTurn = this.player1;
     }
   }
   // playTurn() {
   //
   // }
-  // gameWinner() {
-  //   if ()
-  // }
-     updateBoard() {
+
+    updateBoard() {
        for (var i = 0; i < this.winningBoards.length; i++) {
          if (this.winningBoards[i] === event.target.id) {
            this.winningBoards.splice(i, 1);
@@ -30,9 +28,9 @@ class Game {
 
    checkForWin() {
     var winningJSON = JSON.stringify(this.winningBoards)
-    var humanJSON = JSON.stringify(anotherGame.player1.choices)
-    var computerJSON = JSON.stringify(anotherGame.player2.choices)
-    if (winningJSON.includes(humanJSON)) {
+    var player1JSON = JSON.stringify(anotherGame.player1.choices)
+    var player2JSON = JSON.stringify(anotherGame.player2.choices)
+    if (winningJSON.includes(player1JSON)) {
       this.player1.wins++
       this.currentGameWinner = "⭐";
       this.changingPlayers();
@@ -40,7 +38,7 @@ class Game {
       showWinsFromStorage();
       whoWon.innerHTML = "⭐ Won"
       this.resetBoard();
-    } else if (winningJSON.includes(computerJSON)) {
+    } else if (winningJSON.includes(player2JSON)) {
       this.player2.wins++
       this.currentGameWinner = "💗";
       this.changingPlayers();
@@ -53,10 +51,6 @@ class Game {
       this.resetBoard();
     }
   }
-  // resetBoard() {
-    // if (player1WinsDisplay.innerText = game.playerOne.wins) ||
-    //    (player2WinsDisplay.innerText = game.playerTwo.wins);
-    //    anotherGame = new Game(); //does this empty the spaces??
 
   resetBoard() {
     this.player1.choices = [];
