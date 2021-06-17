@@ -11,6 +11,7 @@ var seven = document.querySelector("#seven");
 var eight = document.querySelector("#eight");
 var nine = document.querySelector("#nine");
 var gameBoard = document.querySelector("#game-board");
+var buttons = document.querySelectorAll("button");
 var player1WinsDisplay = document.querySelector("#display-1-wins");
 var player2WinsDisplay = document.querySelector("#display-2-wins");
 var whoWon = document.querySelector("#whoWon");

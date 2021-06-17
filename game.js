@@ -40,24 +40,10 @@ class Game {
     this.player2.choices = [];
     this.possibleChoices = [1,2,3,4,5,6,7,8,9];
     this.currentGameWinner = ""
-    one.innerHTML = ""
-    two.innerHTML = ""
-    three.innerHTML = ""
-    four.innerHTML = ""
-    five.innerHTML = ""
-    six.innerHTML = ""
-    seven.innerHTML = ""
-    eight.innerHTML = ""
-    nine.innerHTML = ""
-    one.disabled = false;
-    two.disabled = false;
-    three.disabled = false;
-    four.disabled = false;
-    five.disabled = false;
-    six.disabled = false;
-    seven.disabled = false;
-    eight.disabled = false;
-    nine.disabled = false;
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].innerHTML = "";
+      buttons[i].disabled = false;
+    }
     setTimeout(() => {
       whoWon.innerHTML = "Play Game!";
     }, 4000);
